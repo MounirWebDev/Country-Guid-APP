@@ -1,3 +1,5 @@
+const container = document.querySelector('.container');
+const countryInfoContainer = document.querySelector('.countryInfoContainer');
 const input = document.querySelector('.searchContainer input');
 const searchBtn = document.querySelector('.searchBtn');
 const flagImg = document.getElementById('flag');
@@ -7,7 +9,7 @@ const continent = document.querySelector('.continent span');
 const population = document.querySelector('.population span');
 const currency = document.querySelector('.currency span');
 const language = document.querySelector('.language span');
-const errorText = document.querySelector('.error')
+const errorText = document.querySelector('.error');
 const apiKey = 'tYKXvgZrUHD44bwGnoSnvGUARBg8VouD5ostjeO1';
 
 //  GET COUNTRY FUNCTION AND API
@@ -16,15 +18,14 @@ function getCountry() {
 
     if (country) {
         const api = `https://countryapi.io/api/name/${country}?apikey=${apiKey}`;
-        // errorText.style = 'none'
         getData(api);
     }
 }
 
 // SHOW ERROR
-function showError(){
+function showError() {
     const errorCounty = input.value;
-    errorText.style.display = 'block'
+    errorText.style.display = 'block';
     errorText.innerHTML = `"${errorCounty}" Is Not A Country Type Again!`;
 }
 
@@ -33,8 +34,15 @@ async function getData(link) {
     try {
         const response = await fetch(link);
         if (response.status === 404) {
-            showError();
-            // alert('Country Not Found!');
+            countryInfoContainer.style.display = 'none';
+            container.style.display = 'block';
+            setTimeout(() => {
+                container.style.width = '380px';
+            }, 100);
+            setTimeout(() => {
+                showError();
+                container.style.height = '120px';
+            }, 300);
         } else {
             const data = await response.json();
             const curr = Object.values(data)[0].currencies;
@@ -43,6 +51,17 @@ async function getData(link) {
             const lang = Object.values(data)[0].languages;
             const langName = Object.values(lang)[0];
 
+            container.style.width = '400px';
+            setTimeout(() => {
+                container.style.height = '550px';
+            }, 500);
+            setTimeout(() => {
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.justifyContent = 'space-between';
+                container.style.alignItems = 'center';
+                countryInfoContainer.style.display = 'block';
+            }, 1000);
             errorText.style.display = 'none';
             flagImg.src = Object.values(data)[0].flag.medium;
             countryName.innerHTML = Object.values(data)[0].name;

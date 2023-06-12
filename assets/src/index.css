@@ -35,15 +35,18 @@ body {
 
 /* === START STYLING THE COUNTRY GUIDE APP === */
 .container{
-    padding: 40px 20px;
-    width: 400px;
+    padding: 20px 20px;
+    width: 380px;
+    height: 120px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 5px 5px 20px #000;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    overflow-x: hidden;
+    transition: all .4s;
 }
 
 .searchContainer{
@@ -85,6 +88,8 @@ body {
 .countryInfoContainer{
     width: 100%;
     margin-top: 50px;
+    transition: all .4s;
+    display: none;
 }
 
 .countryInfoContainer img{
