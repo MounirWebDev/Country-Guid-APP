@@ -1,0 +1,127 @@
+/* === GOOGLE FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap');
+
+/* === GENERALE PARAMETERS === */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    background-color: #3d64e6;
+    font-size: 18px;
+    font-family: 'Instrument Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* === CSS VARIABLES === */
+:root {
+    /* Sizes */
+    --big-size: 54.93px;
+    --medium-size: 43.95px;
+    --small-size: 16px;
+    --smaller-size: 12px;
+}
+
+/* === START STYLING THE COUNTRY GUIDE APP === */
+.container{
+    padding: 40px 20px;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.searchContainer input{
+    padding: 5px 5px 10px 0px;
+    width: 230px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-bottom: 1px solid #3d64e6;
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+.error{
+    color: #ff0000;
+    font-size: var(--smaller-size);
+    position: absolute;
+    bottom: -20px;
+    display: none;
+}
+
+.searchBtn{
+    padding: 10px 25px;
+    background-color: #3d64e6;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.countryInfoContainer{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.countryInfoContainer img{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.countryInfoContainer h1{
+    margin-block: 5px;
+    text-align: center;
+}
+
+.info{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.info p{
+    width: 80%;
+    text-align: start;
+    padding-bottom: 10px;
+    margin-block-end: 7px;
+    border-bottom: 1px solid;
+    text-transform: capitalize;
+    font-size: var(--small-size);
+    font-weight: bold;
+}
+
+.info p:last-child{
+    border: none;
+}
+
+.info p span{
+    margin-left: 10px;
+    font-weight: normal;
+
+}
